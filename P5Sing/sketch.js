@@ -3,17 +3,11 @@ let seqSynth = new Tone.MonoSynth().toDestination();
 var seq = new Tone.Sequence(callback, 
   ["C3", "D3", "Eb3", "D3", "G3", "G3", "B3", "C4"], "8n");
 
-let chain = new Tone.Players(seq);
-
-
 const sound = new Tone.Players({
   clear: "media/clear.wav"
 })
 
 let button; 
-
-
-
 
 function callback(time, pitch){
   seqSynth.triggerAttackRelease(pitch, "8n", time);
